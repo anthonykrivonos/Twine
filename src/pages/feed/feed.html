@@ -1,30 +1,37 @@
 <ion-header>
-
+      <!-- <img alt="Twine" height="40" class="logobutton" src="templates/twine.png"> -->
       <ion-navbar>
-            <ion-title>Twine Feed</ion-title>
+            <ion-buttons start>
+              <button ion-button menuToggle="nav">
+                <img src="templates/menu-icon.png" class="pic-icon" name="grid"/>
+              </button>
+            </ion-buttons>
+            <ion-buttons end>
+              <button ion-button menuToggle="twines">
+                <img src="templates/message-icon-tilted.png" class="pic-icon" name="grid"/>
+              </button>
+            </ion-buttons>
       </ion-navbar>
-
 </ion-header>
 
-
 <ion-content class="body">
-      <ion-card>
+      <ion-card class="card" id="1">
             <ion-grid class="no-padding">
                   <ion-row class="header">
                         <ion-col width-100>
                               <p>11h ago</p>
                         </ion-col>
                   </ion-row>
+                  <ion-row class="separator">
+                        <ion-col>
+                              <img src="templates/separator-left.png" class="left"/>
+                        </ion-col>
+                        <ion-col>
+                              <img src="templates/separator-right.png" class="right"/>
+                        </ion-col>
+                  </ion-row>
                   <ion-row>
-                        <!-- <ion-row class="separator text-center">
-                              <ion-col width-50 item-left>
-                                    <img class="sepLeft" src="templates/separator-left.png"/>
-                              </ion-col>
-                              <ion-col width-50 item-right>
-                                    <img class="sepRight" src="templates/separator-right.png"/>
-                              </ion-col>
-                        </ion-row> -->
-                        <ion-col id="twinee1" width-33 item-left>
+                        <ion-col id="twinee1" item-left>
                               <ion-item>
                                     <ion-row class="center"><p>294 Twines</p></ion-row>
                                     <ion-row>
@@ -36,7 +43,7 @@
                                     </ion-row>
                               </ion-item>
                         </ion-col>
-                        <ion-col id="twiner" class="lower" width-33>
+                        <ion-col id="twiner" class="lower">
                               <ion-item>
                                     <ion-row class="center"><p>132 Twines</p></ion-row>
                                     <ion-row>
@@ -51,7 +58,7 @@
                                     </ion-row>
                               </ion-item>
                         </ion-col>
-                        <ion-col id="twinee2" width-33 item-right>
+                        <ion-col id="twinee2" item-right>
                               <ion-item>
                                     <ion-row class="center"><p>96 Twines</p></ion-row>
                                     <ion-row>
@@ -85,5 +92,37 @@
                         </button>
                   </ion-col>
             </ion-row>
+            <ion-row>
+                  <ion-card class="option">
+                        <ion-row class="header">
+                              <ion-col width-100>
+                                    <p>Comments</p>
+                              </ion-col>
+                        </ion-row>
+                        <ion-row>
+                              <ion-input [(ngModel)]="msg" class="commentarea" maxlength="100" placeholder="Comment on Jonathan's twine..."></ion-input>
+                              <button class="sendcomment"><ion-icon name="create"></ion-icon></button>
+                        </ion-row>
+                        <ion-grid style="position: relative;">
+                              <ion-content class="commentlist">
+                                    <ion-row class="commentrow">
+                                          <img class="pfpC" src="templates/user2.png" alt="Karl Bates"/>
+                                          <ion-label type="text" class="commentlabel"><span>Karl Bates</span>Same here!</ion-label>
+                                          <p>8hr</p>
+                                          <ion-icon name="more"></ion-icon>
+                                    </ion-row>
+                                    <ion-row class="commentrow">
+                                          <img class="pfpC" src="templates/user3.png" alt="Jonathan Smith"/>
+                                          <ion-label type="text" class="commentlabel"><span>Jonathan Smith</span>Boy do I love Twine's GUI!</ion-label>
+                                          <p>11hr</p>
+                                          <ion-icon name="more"></ion-icon>
+                                    </ion-row>
+                              </ion-content>
+                        </ion-grid>
+                  </ion-card>
+            </ion-row>
       </ion-card>
+      <ion-infinite-scroll>
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
 </ion-content>

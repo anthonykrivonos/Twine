@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+
+import { NavController, MenuController } from 'ionic-angular';
 
 import { FeedPage } from '../pages/feed/feed';
 
@@ -10,8 +12,9 @@ import { FeedPage } from '../pages/feed/feed';
 })
 export class MyApp {
   rootPage = FeedPage;
+  @ViewChild('nav') nav: NavController;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, private menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -19,4 +22,9 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+
+  onLoad (page: any) {
+        this.nav.setRoot(page);
+        this.menuCtrl.close();
+ }
 }
