@@ -1,0 +1,43 @@
+@import '../../theme/theme.scss';
+
+twine-message-card {
+      ion-footer {
+            padding: 0 !important;
+            border-top: solid 1pt color($colors, lightgray) !important;
+            .input-cover {
+                  position: static;
+                  margin: 0 !important;
+            }
+            ion-item {
+                  padding: 0 !important;
+                  border: 0 !important;
+                  background: white !important;
+                  padding-left: 10pt !important;
+                  height: 100% !important;
+                  color: color($colors, gray) !important;
+                  ion-textarea {
+                        textarea {
+                              width: 75vw !important;
+                        }
+                  }
+                  button {
+                        display: inline-block !important;
+                        vertical-align: middle !important;
+                        font-size: 12pt !important;
+                        text-align: right !important;
+                        margin-right: -8pt !important;
+                        font-weight: 500 !important;
+                        color: color($colors, secondary) !important;
+                        background: none !important;
+                        div {
+                              position: absolute !important;
+                              margin: auto !important;
+                              position: relative;
+                              top: 50%;
+                              right: 10pt;
+                              transform: translateY(-50%);
+                        }
+                  }
+            }
+      }
+}

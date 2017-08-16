@@ -1,0 +1,16 @@
+<ion-item-sliding (tap)="toMessages()" *ngIf="!(hidden | async)" #slidingItem>
+      <ion-item no-lines>
+            <img [style.background]="'url(' + (twinee | async)?.picture + ')'" item-left/>
+            <h2>{{(twinee | async)?.name}}</h2>
+            <p>{{(message | async)}}</p>
+            <ion-note item-right>{{time}}</ion-note>
+            <ion-note class="arrow" item-right><ion-icon name="ios-arrow-forward-outline"></ion-icon></ion-note>
+      </ion-item>
+      <ion-item-options side="left" no-lines>
+            <button ion-button (tap)="hide()">
+                  <ion-icon name="md-eye-off"></ion-icon>
+            </button>
+      </ion-item-options>
+      <ion-item-options class="right" side="right" (ionSwipe)="toMessages()" no-lines>
+      </ion-item-options>
+</ion-item-sliding>

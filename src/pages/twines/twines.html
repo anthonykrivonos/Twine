@@ -1,0 +1,35 @@
+<div class="spacing"></div>
+<ion-content>
+      <twine-placeholder [color]="'gray'" [text]="'No Twines Found'" *ngIf="(invitations | async)?.length == 0 && (twines | async)?.length == 0"></twine-placeholder>
+      <ion-list class="external">
+            <div *ngFor="let id of invitations | async">
+                  <twine-invitation-card *ngIf="id" [id]="id.$value"></twine-invitation-card>
+            </div>
+            <div *ngFor="let id of twines | async">
+                  <twine-twine-card *ngIf="id" [id]="id.$value" ></twine-twine-card>
+            </div>
+            <br/><br/>
+      </ion-list>
+</ion-content>
+<ion-toolbar no-border-top>
+      <ion-buttons start>
+        <button ion-button (tap)="toMain()">
+            <img class="logo" src="templates/twine-blue.png"/>
+        </button>
+      </ion-buttons>
+      <ion-searchbar
+            [(ngModel)]="search"
+            [showCancelButton]="false"
+            (ionInput)="searchTwines()"
+            autocomplete="on"
+            animated="true"
+            placeholder="Search Twines"
+      >
+      </ion-searchbar>
+      <ion-buttons end>
+            <button (tap)="toMenu()" ion-button>
+                  <img [style.background]="'url(' + user.picture + ')'"/>
+            </button>
+      </ion-buttons>
+</ion-toolbar>
+<div class="spacing"></div>

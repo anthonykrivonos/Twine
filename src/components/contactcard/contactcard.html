@@ -1,0 +1,6 @@
+<ion-item (tap)="invite()" no-lines>
+      <ion-icon *ngIf="!contact.picture" name="md-phone-portrait" item-left></ion-icon>
+      <img *ngIf="contact.picture" alt="contact.picture" [style.background]="'url(' + contact.picture + ')'" item-left/>
+      <h2>{{contact.name}}</h2>
+      <ion-note *ngIf="contact.phone" item-right>{{contact.phone}}</ion-note>
+</ion-item>

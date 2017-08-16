@@ -1,0 +1,21 @@
+<div class="spacing"></div>
+<twine-button #button (tap)="createTwine()">
+</twine-button>
+<ion-toolbar no-border-top>
+      <div class="border"></div>
+      <ion-buttons start>
+       <button ion-button (tap)="toMenu()">
+            <ion-icon name="md-list"></ion-icon>
+       </button>
+      </ion-buttons>
+      <ion-buttons end (tap)="toTwines()">
+       <button ion-button>
+            <ion-icon name="chatbubbles"></ion-icon>
+       </button>
+      </ion-buttons>
+</ion-toolbar>
+<twine-feed *ngIf="feed" [user]="user">
+</twine-feed>
+<twine-screen [@toggleYState]="toggleY" [user]="user">
+</twine-screen>
+<div class="spacing"></div>

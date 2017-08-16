@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "19978743716",
+    "firebase_url": "https://twine-efd1c.firebaseio.com",
+    "project_id": "twine-efd1c",
+    "storage_bucket": "twine-efd1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19978743716:android:f2da1a407cee20ae",
+        "android_client_info": {
+          "package_name": "com.ionicframework.twine214176"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19978743716-dm2f4qr0b40ccleo57ml3n49lglm0an7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "19978743716-kc8dt4g591d378ifj7pjovk4dhj58stp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4rh8cQnpf5CcfMGu8kqmf5F3f6pJwOnQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

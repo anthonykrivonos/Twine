@@ -1,0 +1,26 @@
+<div class="middle" *ngIf="(type | async) == 'twiner'">
+      <img [style.background]="'url(' + (messager | async)?.picture + ')'" class="twiner"/>
+      <div class="center">
+            <ion-item class="twinermsg" no-lines>
+                  <h3>{{(messager | async)?.name}}</h3>
+                  <p>{{message.text}}</p>
+                  <div class="date">{{date}}</div>
+            </ion-item>
+      </div>
+</div>
+<ion-item-sliding>
+      <ion-item class="right" *ngIf="(type | async) == 'user'" no-lines>
+            <img [style.background]="'url(' + (messager | async)?.picture + ')'" item-right/>
+            <div class="text">{{message.text}}</div>
+      </ion-item>
+      <ion-item class="left" *ngIf="(type | async) == 'twinee'" item-left no-lines>
+            <img [style.background]="'url(' + (messager | async)?.picture + ')'" item-left/>
+            <div class="text">{{message.text}}</div>
+      </ion-item>
+      <ion-item-options *ngIf="(type | async) == 'user'" side="right" no-lines>
+            <div class="right">{{date}}</div>
+      </ion-item-options>
+      <ion-item-options *ngIf="(type | async) == 'twinee'" side="left" no-lines>
+            <div class="left">{{date}}</div>
+      </ion-item-options>
+</ion-item-sliding>

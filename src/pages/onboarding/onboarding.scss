@@ -1,0 +1,41 @@
+@import '../../theme/theme.scss';
+
+page-onboarding {
+      ion-slides {
+            background: white !important;
+            ion-slide {
+                  background: white !important;
+                  h1 {
+                        background: -webkit-linear-gradient(280deg, color($colors, primary), color($colors, tertiary)) !important;
+                        font-size: 80pt;
+                        -webkit-background-clip: text !important;
+                        -webkit-text-fill-color: transparent !important;
+                        font-family: 'Lobster', sans-serif !important;
+                  }
+                  button {
+                        background: -webkit-linear-gradient(280deg, color($colors, primary), color($colors, tertiary)) !important;
+                        color: white;
+                        ion-icon {
+                              margin-right: 2vh;
+                              font-size: 20pt !important;
+                        }
+                        h2 {
+                              margin-top: 9px;
+                              font-size: 16pt !important;
+                        }
+                  }
+                  .button-inner {
+                        margin-top: -5px !important;
+                        margin-bottom: -5px !important;
+                  }
+            }
+            .swiper-pagination-bullet
+            {
+                  background-color: color($colors, lightgray);
+            }
+            .swiper-pagination-bullet-active
+            {
+                  background-color: white;
+            }
+      }
+}

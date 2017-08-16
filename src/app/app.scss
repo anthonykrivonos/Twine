@@ -1,6 +1,52 @@
-.toolbar-background {
-      background: color($colors, blushpapaya);
+@import '../theme/theme.scss';
+@import url('https://fonts.googleapis.com/css?family=Cabin|Hind|Lato|Lobster|Open+Sans');
+
+ion-app {
+      font-family: 'Open Sans', sans-serif !important;
+      color: color($colors, gray) !important;
 }
-.toolbar-title {
-      color: white;
+
+ion-menu {
+      border-radius: 0 2vh 2vh 0 !important;
+      twine-menu {
+            border-radius: 0 2vh 2vh 0 !important;
+      }
+}
+
+.alert-primary {
+      button{
+            color: color($colors, primary) !important;
+      }
+}
+
+.alert-secondary {
+      button{
+            color: color($colors, secondary) !important;
+      }
+}
+
+
+.toast {
+      text-align: center !important;
+      .toast-container{
+            background: white !important;
+      }
+      div {
+            border-radius: 5pt !important;
+      }
+}
+
+.toast-primary {
+      @extend .toast;
+      div {
+            color: color($colors, primary) !important;
+            border: solid 0.5pt color($colors, primary) !important;
+      }
+}
+.toast-secondary {
+      @extend .toast;
+      div {
+            color: color($colors, secondary) !important;
+            border: solid 0.5pt color($colors, secondary) !important;
+      }
 }

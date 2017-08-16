@@ -1,31 +1,4 @@
-<ion-menu side="left" type="push" id="nav" [content]="nav">
-      <ion-header>
-            <ion-toolbar>
-                  <ion-title>Settings</ion-title>
-            </ion-toolbar>
-      </ion-header>
-      <ion-content>
-            <ion-list>
-                  <button ion-item (click)="onLoad()">
-                        <ion-icon name="settings" item-left></ion-icon>
-                        Settings
-                  </button>
-            </ion-list>
-      </ion-content>
+<ion-menu [content]="twineapp" persistent="false" type="overlay" (ionOpen)="menuOpen()" (ionClose)="menuClose()">
+  <twine-menu></twine-menu>
 </ion-menu>
-
-<ion-menu side="right" type="push" id="twines" [content]="nav">
-      <ion-header>
-            <ion-toolbar>
-                  <ion-title>Twines</ion-title>
-            </ion-toolbar>
-      </ion-header>
-      <ion-content>
-            <ion-card>
-                  <p>What's good?</p>
-            </ion-card>
-      </ion-content>
-</ion-menu>
-
-
-<ion-nav [root]="rootPage" #nav></ion-nav>
+<ion-nav #twineapp [root]="rootPage" #nav></ion-nav>

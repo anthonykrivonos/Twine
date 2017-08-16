@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function sendNotification() {
+
+		var title = document.getElementById("title").value;
+		var body = document.getElementById("body").value;
+
+		var data = JSON.stringify({
+    			"tokens": ["7cfe797568ef16977b351f62f0fe2cc5a824a1b759e651191adbb82afdf1097e"],
+    			"profile": "twinedev",
+			"notification": {
+				"title": title,
+				"message": body
+			}
+		});
+
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function () {
+			if (this.readyState === 4) {
+				console.log(this.responseText);
+			}
+		});
+
+		xhr.open("POST", "https://api.ionic.io/push/notifications");
+		xhr.setRequestHeader("content-type", "application/json");
+		xhr.setRequestHeader("authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NzU2OGUzOC02OGIxLTQ5YzktYTQ4MS04ODY1MzI3YTc3NjgifQ.7jZL2GpHoxQB_BTy3n3JuBxRPjCldt4WoAu5qOVcn78");
+		xhr.setRequestHeader("cache-control", "no-cache");
+
+		xhr.send(data);
+
+	}
+
+	</script>
+
+	<style type="text/css">
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 300px;
+	}
+
+	.container > div {
+		margin-bottom: 30px;
+	}
+
+	textarea {
+		width: 400px;
+		height: 100px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div><input type="text" id="title" placeholder="Title"></div>
+		<div><textarea id="body" placeholder="Notification Message"></textarea></div>
+		<div><button onclick="sendNotification()">Send Notification</button></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+@import '../../theme/theme.scss';
+
+twine-contactcard {
+      ion-item {
+            ion-icon {
+                  background: -webkit-linear-gradient(310deg, color($colors, secondary), color($colors, secondary), color($colors, quaternary)) !important;
+                  -webkit-background-clip: text !important;
+                  -webkit-text-fill-color: transparent !important;
+                  width: 9vw !important;
+                  margin-right: 2vw !important;
+            }
+            img {
+                  border: 2px solid #fff;
+                  border-radius: 50%;
+                  display: inline-block;
+                  z-index: 2 !important;
+                  height: 9vw !important;
+                  width: 9vw !important;
+                  margin: 1vw 2vw 1vw 0 !important;
+                  background-repeat: no-repeat !important;
+                  background-clip: content-box !important;
+                  background-position: center !important;
+                  background-size: cover !important;
+            }
+            h2 {
+                  font-family: 'Hind', sans-serif !important;
+                  margin-bottom: -3pt !important;
+                  font-size: 14pt !important;
+                  margin-top: 1pt !important;
+                  font-weight: 500 !important;
+                  text-overflow: ellipsis !important;
+                  display: inline !important;
+            }
+            ion-note {
+                  margin-right: 10pt !important;
+                  font-size: 11pt !important;
+            }
+      }
+}

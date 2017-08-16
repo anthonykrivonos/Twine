@@ -1,0 +1,190 @@
+<ion-row class="cover">
+      <img [src]="(twiner | async)?.cover">
+</ion-row>
+<ion-content>
+      <ion-infinite-scroll class="infinitescroll"*ngIf="!end && tab == 'notifications'" (ionInfinite)="infiniteScroll($event)" position="top" threshold="30%">
+            <ion-infinite-scroll-content
+                  loadingSpinner="crescent"
+                  loadingText="Loading your feed...">
+            </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      <ion-row class="user">
+            <img [style.background]="'url(' + (twiner | async)?.picture + ')'">
+      </ion-row>
+      <ion-row class="middle">
+            <ion-col class="left" col-6>
+                  <div class="name">{{(twiner | async)?.name}}</div>
+                  <div class="lastlogin">{{(twiner | async)?.lastlogin}}</div>
+            </ion-col>
+            <ion-col class="right" col-6>
+                  <div class="score">{{(score | async)?.score && (score | async)?.score > 0 ? (score | async)?.score : 0}}</div>
+                  <div class="scores" color="gray" item-right>{{(score | async)?.twines_liked || 0}}<ion-icon name="ios-heart"></ion-icon>{{(score | async)?.twine_comments || 0}}<ion-icon name="ios-quote"></ion-icon>{{(score | async)?.twines_made || 0}}<ion-icon class="img"><img src="templates/twine-blue.png"/></ion-icon></div>
+            </ion-col>
+      </ion-row>
+      <ion-segment color="secondary" [(ngModel)]="tab" mode="md">
+            <ion-segment-button value="notifications" active no-padding>Notifications</ion-segment-button>
+            <ion-segment-button value="preferences" no-padding>Preferences</ion-segment-button>
+      </ion-segment>
+      <ion-content *ngIf="tab == 'notifications'" scroll="true" class="notif">
+            <twine-placeholder [color]="'gray'" [text]="'No Notifications Found'" *ngIf="notifications.length == 0"></twine-placeholder>
+            <div class="notifcontainer">
+                  <twine-notification *ngFor="let notification of notifications; let i = index"
+                        [id]="notification.id"
+                        [idx]="i"
+                        [title]="notification.title"
+                        [body]="notification.body"
+                        [date]="notification.date"
+                        [hidden]="notification.hidden"
+                        [seen]="notification.seen">
+                  >
+                  </twine-notification>
+            </div>
+            <br/><br/>
+      </ion-content>
+      <ion-content *ngIf="tab == 'preferences'" scroll="true">
+            <ion-slides (ionSlideReachStart)="lockSlides(true)" (ionSlidePrevEnd)="lockSlides(true)" (ionSlideReachEnd)="lockSlides(false)" spaceBetween="10" #slides>
+                  <ion-slide>
+                        <ion-content>
+                              <ion-item-group class="name">
+                                    <ion-item no-lines>
+                                          <ion-label class="stacked" stacked>Name</ion-label>
+                                          <ion-input [disabled]="updatedName.length == 0 && !online" type="text" [(ngModel)]="updatedName" maxlength="10" (keydown)="updateName()" placeholder="{{(twiner | async)?.original_name}}"></ion-input>
+                                    </ion-item>
+                              </ion-item-group>
+                              <ion-item-group>
+                                    <ion-item-divider>Interaction</ion-item-divider>
+                                    <button ion-item (tap)="iterateSlide('invite')" no-lines>
+                                          Invite Friends
+                                    </button>
+                              </ion-item-group>
+                              <ion-item-group>
+                                    <ion-item-divider>Push Notifications</ion-item-divider>
+                                    <ion-item no-lines>
+                                          <ion-label>Twines</ion-label>
+                                          <ion-toggle (ionChange)="toggleTwinesOption()" [(ngModel)]="twinesOption" color="secondary"></ion-toggle>
+                                    </ion-item>
+                                    <ion-item no-lines>
+                                          <ion-label>Messages</ion-label>
+                                          <ion-toggle (ionChange)="toggleMessagesOption()" [(ngModel)]="messagesOption" color="secondary"></ion-toggle>
+                                    </ion-item>
+                                    <ion-item no-lines>
+                                          <ion-label>Likes</ion-label>
+                                          <ion-toggle (ionChange)="toggleLikesOption()" [(ngModel)]="likesOption" color="secondary"></ion-toggle>
+                                    </ion-item>
+                                    <ion-item no-lines>
+                                          <ion-label>Comments</ion-label>
+                                          <ion-toggle (ionChange)="toggleCommentsOption()" [(ngModel)]="commentsOption" color="secondary"></ion-toggle>
+                                    </ion-item>
+                              </ion-item-group>
+                              <ion-item-group>
+                                    <ion-item-divider>Other</ion-item-divider>
+                                    <ion-item no-lines>
+                                          <ion-label>Vibration</ion-label>
+                                          <ion-toggle (ionChange)="toggleVibrationOption()" [(ngModel)]="vibrationOption" color="secondary"></ion-toggle>
+                                    </ion-item>
+                                    <button ion-item (tap)="iterateSlide('block')" no-lines>
+                                          Block
+                                    </button>
+                                    <button ion-item (tap)="iterateSlide('unhide')" no-lines>
+                                          Unhide
+                                    </button>
+                              </ion-item-group>
+                              <ion-item-group>
+                                    <ion-item-divider>Info</ion-item-divider>
+                                    <button ion-item (tap)="iterateSlide('faqs')" no-lines>
+                                          FAQs
+                                    </button>
+                                    <button ion-item (tap)="iterateSlide('policy')" no-lines>
+                                          Policy
+                                    </button>
+                                    <button ion-item (tap)="iterateSlide('report')" no-lines>
+                                          Report a Bug
+                                    </button>
+                              </ion-item-group>
+                              <div padding>
+                                    <button (tap)="logOut()" ion-button block color="secondary">Log Out</button>
+                              </div>
+                              <br/>
+                        </ion-content>
+                  </ion-slide>
+                  <ion-slide>
+                        <ion-content>
+                              <div *ngIf="subtab == 'invite'">
+                                    <ion-item-group>
+                                          <ion-item-divider>Invite Friends</ion-item-divider>
+                                          <twine-placeholder [color]="'gray'" [text]="'No Friends Found'" *ngIf="(contactsList | async)?.length == 0"></twine-placeholder>
+                                          <twine-contactcard *ngFor="let contact of contactsList | async;" [contact] = "contact">
+                                          </twine-contactcard>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                              <div *ngIf="subtab == 'block'">
+                                    <ion-item-group>
+                                          <ion-item-divider>Block Users</ion-item-divider>
+                                          <twine-placeholder [color]="'gray'" [text]="'No Friends Found'" *ngIf="(friends | async)?.length == 0"></twine-placeholder>
+                                          <twine-blockcard *ngFor="let friend of friends | async;"
+                                                [id] = "friend?.$value"
+                                          >
+                                          </twine-blockcard>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                              <div *ngIf="subtab == 'unhide'">
+                                    <ion-item-group>
+                                          <ion-item-divider>Unhide Twines</ion-item-divider>
+                                          <twine-placeholder [color]="'gray'" [text]="'No Twines Hidden'" *ngIf="(hidden | async)?.length == 0"></twine-placeholder>
+                                          <twine-hidecard *ngFor="let hide of hidden | async;"
+                                                [id] = "hide?.$value"
+                                          >
+                                          </twine-hidecard>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                              <div *ngIf="subtab == 'faqs'">
+                                    <ion-item-group>
+                                          <ion-item-divider>FAQs</ion-item-divider>
+                                          <ion-item no-lines class="item-text-wrap" *ngFor="let FAQ of FAQs | async">
+                                                <div class="question">{{FAQ?.question}}</div>
+                                                <div class="answer">{{FAQ?.answer}}</div>
+                                          </ion-item>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                              <div *ngIf="subtab == 'policy'">
+                                    <ion-item-group>
+                                          <ion-item-divider>Policy</ion-item-divider>
+                                          <ion-item no-lines class="item-text-wrap">
+                                                <div class="question">{{(policy | async)?.name}}</div>
+                                                <div class="update">Last updated: {{(policy | async)?.updated}}</div>
+                                                <div class="muchtext">{{(policy | async)?.privacy}}</div>
+                                          </ion-item>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                              <div *ngIf="subtab == 'report'">
+                                    <ion-item-group>
+                                          <ion-item-divider>Report a Bug</ion-item-divider>
+                                          <ion-item no-lines>
+                                                <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="bug" maxlength="200" rows="1" fz-elastic placeholder="Bug description..."></ion-textarea>
+                                          </ion-item>
+                                          <button [disabled]="bug.length == 0 || !online" *ngIf="bug.length > 0 && online" class="send" (tap)="checkSend('bug')" clear block outline>Send</button>
+                                    </ion-item-group>
+                                    <div padding>
+                                          <button ion-button block color="secondary" (tap)="deIterateSlide()">Back</button>
+                                    </div>
+                              </div>
+                        </ion-content>
+                  </ion-slide>
+            </ion-slides>
+      </ion-content>
+</ion-content>

@@ -1,0 +1,47 @@
+@import '../../theme/theme.scss';
+@import '../feedcard/feedcard.scss';
+
+twine-invitation-card {
+      @extend twine-feed-card;
+      div.container {
+            ion-item {
+                  ion-grid {
+                        ion-row.separator {
+                              span {
+                                    border: 0.9vh solid color($colors, secondary);
+                                    border-top-left-radius: 5vh !important;
+                                    border-top-right-radius: 5vh !important;
+                                    border-bottom: 0 !important;
+                              }
+                        }
+                        div.starter {
+                              text-align: center !important;
+                              div {
+                                    font-size: 10pt !important;
+                                    display: inline-block !important;
+                                    color: gray !important;
+                                    width: 94vw !important;
+                                    padding: 5pt 4pt 5pt 5pt !important;
+                                    border-top: solid 1px color($colors, lightgray) !important;
+                                    word-wrap: normal !important;
+                                    white-space: normal !important;
+                              }
+                        }
+                  }
+                  .options {
+                        ion-col {
+                              button {
+                                    ion-icon, div {
+                                          background: -webkit-linear-gradient(70deg, color($colors, secondary),color($colors, quaternary)) !important;
+                                          -webkit-background-clip: text !important;
+                                          -webkit-text-fill-color: transparent !important;
+                                    }
+                                    div.option {
+                                          font-weight: 600 !important;
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+}

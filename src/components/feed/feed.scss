@@ -1,0 +1,15 @@
+@import '../../theme/theme.scss';
+
+twine-feed {
+      .padding {
+<<<<<<< HEAD
+            height: 11vh !important;
+=======
+            height: 12vh !important;
+>>>>>>> 1cefd4fb3e488e62fadc2165570575f2ef576b53
+      }
+      .content-full {
+            background: color($colors, lightgray) !important;
+            padding-bottom: 0pt !important;
+      }
+}

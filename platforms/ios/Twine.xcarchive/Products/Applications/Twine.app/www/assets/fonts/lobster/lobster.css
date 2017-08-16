@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Hind', sans-serif;
+    src: url('fonts/lobster.eot');
+    src: url('fonts/lobster.eot') format('embedded-opentype'),
+         url('fonts/lobster.woff2') format('woff2'),
+         url('fonts/lobster.woff') format('woff'),
+         url('fonts/lobster.ttf') format('truetype'),
+         url('fonts/lobster.svg#lobster') format('svg');
+}

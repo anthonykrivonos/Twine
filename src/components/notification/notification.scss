@@ -1,0 +1,37 @@
+@import '../../theme/theme.scss';
+
+twine-notification {
+      div.container {
+            margin-top: 1pt !important;
+            ion-item {
+                  img {
+                        border-radius: 50%;
+                        z-index: 2 !important;
+                        height: 32px !important;
+                        width: 32px !important;
+                        margin: 1pt 8pt 1pt -4pt !important;
+                        background-repeat: no-repeat !important;
+                        background-clip: content-box !important;
+                        background-position: top !important;
+                        background-size: cover !important;
+                  }
+                  h2 {
+                        font-family: 'Hind', sans-serif !important;
+                        display: inline-block !important;
+                        background: -webkit-linear-gradient(310deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                        -webkit-background-clip: text !important;
+                        -webkit-text-fill-color: transparent !important;
+                  }
+                  h3 {
+                        color: color($colors, gray) !important;
+                        display: inline-block !important;
+                        font-weight: 400;
+                        white-space: normal;
+                  }
+                  ion-note {
+                        margin-right: 4pt !important;
+                        font-size: 9pt !important;
+                  }
+            }
+      }
+}

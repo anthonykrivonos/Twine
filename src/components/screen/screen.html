@@ -1,0 +1,96 @@
+<div class="spacing"></div>
+<ion-toolbar no-border-top>
+      <ion-title><span class="title">Create Twine</span></ion-title>
+      <ion-buttons start>
+            <button ion-button (tap)="toMenu()">
+                  <ion-icon name="md-list"></ion-icon>
+            </button>
+      </ion-buttons>
+      <ion-buttons end (tap)="closeScreen();toTwines();">
+            <button ion-button>
+                  <ion-icon name="chatbubbles"></ion-icon>
+            </button>
+      </ion-buttons>
+</ion-toolbar>
+<ion-content>
+      <div class="container">
+            <ion-item class="twine" no-lines>
+                  <ion-row class="info">
+                        <ion-col>
+                              <ion-icon *ngIf="(data | async)?.privacy == 'public'" name="md-people"></ion-icon>
+                              <ion-icon *ngIf="(data | async)?.privacy == 'private'" name="md-lock"></ion-icon>
+                        </ion-col>
+                        <ion-col>
+                              <h1>{{(time | async)}}</h1>
+                        </ion-col>
+                  </ion-row>
+                  <ion-row class="separator">
+                        <span></span>
+                  </ion-row>
+                  <ion-row class="twine">
+                        <ion-slides no-border centeredSlides="true" slidesPerView="1" initialSlide="0" class="swiper" direction="vertical" (ionSlideDidChange)="setFriend()" (ionSlideWillChange)="generateUniqueFriendsList()" #friendsSld>
+                              <ion-slide *ngFor="let friend of friendsObs | async; let i = index" no-border>
+                                    <ion-col id="twinee1" col-3>
+                                          <ion-row>
+                                                <img [style.background]="'url(' + (friend | async)?.picture + ')'"/>
+                                          </ion-row>
+                                    </ion-col>
+                              </ion-slide>
+                        </ion-slides>
+                        <ion-col id="twiner" col-4>
+                              <ion-row>
+                                    <img [style.background]="'url(' + user.picture + ')'"/>
+                              </ion-row>
+                              <ion-row class="center">
+                                    <h2>You</h2>
+                              </ion-row>
+                        </ion-col>
+                        <ion-slides no-border centeredSlides="true" slidesPerView="1" spaceBetween="10" initialSlide="0" class="swiper" direction="vertical" (ionSlideDidChange)="setOtherFriend()" #otherFriendsSld>
+                              <ion-slide *ngFor="let otherFriend of otherFriendsObs | async; let i = index" no-border>
+                                    <ion-col id="twinee2" col-3>
+                                          <ion-row>
+                                                <img [style.background]="'url(' + (otherFriend | async)?.picture + ')'"/>
+                                          </ion-row>
+                                    </ion-col>
+                              </ion-slide>
+                        </ion-slides>
+                  </ion-row>
+            </ion-item>
+      </div>
+      <ion-row class="search">
+            <ion-col col-5>
+                  <ion-input class="left" color="gray" autocorrect="false" (input)="find(TWINEE1)" [(ngModel)]="twinee1" maxlength="15" placeholder="{{currTwinee1}}" #twinee1in></ion-input>
+            </ion-col>
+            <ion-col col-2>
+            </ion-col>
+            <ion-col col-5>
+                  <ion-input class="right" color="gray" autocorrect="false" (input)="find(TWINEE2)" [(ngModel)]="twinee2" maxlength="15" placeholder="{{currTwinee2}}" #twinee2in></ion-input>
+            </ion-col>
+      </ion-row>
+      <ion-segment color="primary" [(ngModel)]="privacy" mode="md">
+            <ion-segment-button value="public" active no-padding>
+                  <ion-icon name="md-people"></ion-icon>
+                  Public
+            </ion-segment-button>
+            <ion-segment-button value="private" no-padding>
+                  <ion-icon name="md-lock"></ion-icon>
+                  Private
+            </ion-segment-button>
+      </ion-segment>
+      <ion-input class="caption" color="gray" [(ngModel)]="caption" scroll="false" maxlength="25" placeholder="Caption"></ion-input>
+      <button class="starterBtn" (tap)="starterVisible = true" *ngIf="!starterVisible" block ion-button>Add Optional Conversation Starter?</button>
+      <ion-textarea class="starter" *ngIf="starterVisible" color="gray" [(ngModel)]="starter" scroll="false" maxlength="250" rows="2" fz-elastic placeholder="Conversation Starter (Optional)"></ion-textarea>
+      <twine-placeholder [color]="'primary'" [text]="'Enter a caption to create this Twine.'" *ngIf="caption.length == 0 && online && error"></twine-placeholder>
+      <twine-placeholder [color]="'primary'" [text]="'Connect to a network to create this Twine.'" *ngIf="caption.length != 0 && !online && error"></twine-placeholder>
+      <twine-placeholder [color]="'primary'" [text]="'Enter a caption and connect to a network to create this Twine.'" *ngIf="caption.length == 0 && !online && error"></twine-placeholder>
+</ion-content>
+<ion-footer>
+      <ion-toolbar>
+            <ion-buttons start>
+                  <button (tap)="clearFields()" ion-button item-left><div>Clear</div></button>
+            </ion-buttons>
+            <ion-buttons end>
+                  <button (tap)="closeScreen()" ion-button item-right><div>Close</div></button>
+            </ion-buttons>
+      </ion-toolbar>
+</ion-footer>

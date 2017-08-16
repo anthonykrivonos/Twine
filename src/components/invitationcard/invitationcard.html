@@ -1,0 +1,70 @@
+<div class="container">
+      <ion-item>
+            <ion-grid>
+                  <ion-row class="info">
+                        <ion-col>
+                              <ion-icon *ngIf="(privacy | async) == 'public'" name="md-people"></ion-icon>
+                              <ion-icon *ngIf="(privacy | async) == 'private'" name="md-lock"></ion-icon>
+                        </ion-col>
+                        <ion-col>
+                              <h1>{{(time | async)}}</h1>
+                        </ion-col>
+                  </ion-row>
+                  <ion-row class="separator">
+                        <span></span>
+                  </ion-row>
+                  <ion-row class="twine">
+                        <ion-col id="twinee1" col-4>
+                              <ion-row>
+                                    <img [style.background]="'url(' + (twinee1 | async)?.picture + ')'"/>
+                              </ion-row>
+                              <ion-row class="center">
+                                    <h2>{{twinee == 'twinee1' ? 'You' : (twinee1 | async)?.name}}</h2>
+                              </ion-row>
+                        </ion-col>
+                        <ion-col id="twiner" col-3>
+                              <ion-row>
+                                    <img [style.background]="'url(' + (twiner | async)?.picture + ')'"/>
+                              </ion-row>
+                              <ion-row class="center">
+                                    <h2>{{twinee == 'twiner' ? 'You' : (twiner | async)?.name}}</h2>
+                                    <div class="info">
+                                          <p>{{(caption | async)}}</p>
+                                    </div>
+                              </ion-row>
+                        </ion-col>
+                        <ion-col id="twinee2" col-4>
+                              <ion-row>
+                                    <img [style.background]="'url(' + (twinee2 | async)?.picture + ')'"/>
+                              </ion-row>
+                              <ion-row class="center">
+                                    <h2>{{twinee == 'twinee2' ? 'You' : (twinee2 | async)?.name}}</h2>
+                              </ion-row>
+                        </ion-col>
+                  </ion-row>
+                  <div *ngIf="showStarter" class="starter">
+                        <div>{{(starter | async)}}</div>
+                  </div>
+            </ion-grid>
+            <ion-row class="options">
+                  <ion-col>
+                        <button (tap)="accept(true)" [disabled]="!this.online">
+                              <div class="option">Accept</div>
+                        </button>
+                  </ion-col>
+                  <ion-col>
+                        <button (tap)="showStarter = !showStarter;" ion-button icon-left clear small [disabled]="!this.online">
+                              <div *ngIf="!showStarter">Show Starter</div>
+                              <div *ngIf="showStarter">Hide Starter</div>
+                        </button>
+                  </ion-col>
+                  <ion-col>
+                        <button (tap)="accept(false)" ion-button icon-left clear small [disabled]="!this.online">
+                              <div class="option">Decline</div>
+                        </button>
+                  </ion-col>
+            </ion-row>
+            <ion-row class="border">
+            </ion-row>
+      </ion-item>
+</div>

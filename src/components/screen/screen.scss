@@ -1,0 +1,249 @@
+@import '../../theme/theme.scss';
+
+twine-screen {
+      background: none !important;
+      ion-toolbar {
+            .title {
+                  font-family: 'Lobster', cursive !important;
+            }
+            ion-title, .toolbar-title {
+                  font-size: 18pt !important;
+                  margin-top: 2pt !important;
+                  background: -webkit-linear-gradient(90deg, color($colors, tertiary), color($colors, primary));
+                  -webkit-background-clip: text !important;
+                  -webkit-text-fill-color: transparent !important;
+            }
+            ion-buttons {
+                  button {
+                        background: none !important;
+                        div {
+                              background: -webkit-linear-gradient(110deg, color($colors, tertiary), color($colors, primary)) !important;
+                              -webkit-background-clip: text !important;
+                              -webkit-text-fill-color: transparent !important;
+                        }
+                  }
+            }
+      }
+      ion-content {
+            margin-top: 12vh !important;
+            padding: 0 !important;
+            height: 90vh !important;
+            font-size: 16pt !important;
+            color: color($colors, gray) !important;
+            .scroll-content {
+                  overflow: hidden !important;
+            }
+            div.container {
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  height: auto !important;
+                  padding-bottom: 3vh !important;
+                  background: white !important;
+                  padding-top: 5pt !important;
+                  ion-item.twine {
+                        margin-left: -3.5pt !important;
+                        padding-bottom: 1pt !important;
+                        &.item, &.item-ios, &.item-md, &.item-inner, &.input-wrapper {
+                              padding: 0 !important;
+                              width: calc(100vw + 6pt) !important;
+                              margin: 0 !important;
+                        }
+                        .row {
+                              padding: 0 !important;
+                              margin: 0 !important;
+                        }
+                        ion-row {
+                              background: none !important;
+                        }
+                        ion-row.info {
+                              position: absolute !important;
+                              z-index: 3 !important;
+                              width: 100vw !important;
+                              top: -1pt !important;
+                              font-size: 10pt !important;
+                              color: color($colors, gray) !important;
+                              opacity: 0.8 !important;
+                              ion-icon {
+                                    margin-left: 4pt !important;
+                              }
+                              h1 {
+                                    font-size: 10pt !important;
+                                    float: right !important;
+                                    font-family: 'Hind', sans-serif !important;
+                                    margin-right: 5pt !important;
+                                    margin-top: 3pt !important;
+                              }
+                        }
+                        ion-row.separator {
+                              position: absolute;
+                              margin-top: 2.5vh;
+                              margin-left: -3.5pt !important;
+                              margin: auto;
+                              text-align: center;
+                              left:50%;
+                              span {
+                                    position:relative;
+                                    margin: auto !important;
+                                    left: -50%;
+                                    width: 44vw;
+                                    height: 1vh;
+                                    border-radius: 20pt !important;
+                                    background: color($colors, primary);
+                                    top: 8.5vh !important;
+                                    z-index: 0 !important;
+                              }
+                        }
+                        ion-row.twine {
+                              position: static !important;
+                              width: 100vw !important;
+                              .swiper {
+                                    margin: auto !important;
+                                    margin-top: 0vh !important;
+                                    width: 30vw !important;
+                                    height: 30vw !important;
+                                    position: static !important;
+                                    border-radius: 15vh !important;
+                                    ion-slide {
+                                          width: 30vw !important;
+                                          height: 30vw !important;
+                                          border-radius: 15vh !important;
+                                          position: static !important;
+                                          margin-right: auto !important;
+                                          margin-left: auto !important;
+                                          background: none !important;
+                                          ion-col {
+                                                ion-row {
+                                                      img {
+                                                            margin: auto !important;
+                                                            border-radius: 50%;
+                                                            background-repeat: no-repeat !important;
+                                                            background-clip: content-box !important;
+                                                            background-position: top !important;
+                                                            background-size: cover !important;
+                                                            box-shadow: 0 0 1px color($colors, gray);
+                                                            height: 24vw !important;
+                                                            width: 24vw !important;
+                                                      }
+                                                }
+                                          }
+                                    }
+                              }
+                              #twiner {
+                                    margin-top: 1pt !important;
+                                    padding: 0 !important;
+                                    ion-row {
+                                          img {
+                                                margin: 0 auto 6px auto !important;
+                                                border-radius: 50%;
+                                                width: 30vw !important;
+                                                height: 30vw !important;
+                                                background-repeat: no-repeat !important;
+                                                background-clip: content-box !important;
+                                                background-position: top !important;
+                                                background-size: cover !important;
+                                          }
+                                    }
+                                    .center {
+                                          text-align: center;
+                                          display: block;
+                                          padding: 0;
+                                          font-weight: 400;
+                                          h2 {
+                                                margin-top: 0pt !important;
+                                                font-family: 'Hind', sans-serif !important;
+                                                background: -webkit-linear-gradient(280deg, color($colors, tertiary), color($colors, primary), color($colors, primary)) !important;
+                                                -webkit-background-clip: text !important;
+                                                -webkit-text-fill-color: transparent !important;
+                                                overflow:hidden !important;
+                                                white-space: nowrap !important;
+                                                text-overflow: ellipsis !important;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+            ion-row.search {
+                  margin-top: -9.5vh !important;
+                  background: none !important;
+                  position: absolute !important;
+                  width: 100vw !important;
+                  font-size: 16pt !important;
+                  z-index: 2 !important;
+                  ion-col {
+                        ion-input {
+                              border: 0 !important;
+                              background: none !important;
+                              margin: 0 !important;
+                              input {
+                                    text-align: center !important
+                              }
+                              &.left {
+                                    margin-left: -2.8vw !important;
+                              }
+                              &.right {
+                                    margin-left: 5.5vw !important;
+                              }
+                        }
+                  }
+            }
+            ion-segment {
+                  margin-bottom: 0pt !important;
+                  margin-top: -3vh !important;
+                  padding: 0 !important;
+                  background: white !important;
+                  ion-segment-button {
+                        font-size: 12pt !important;
+                        text-transform: none !important;
+                        ion-icon {
+                              flex-direction: column;
+                              justify-content: center;
+                              text-align: center !important;
+                              margin-right: 3pt !important;
+                              margin-left: 3pt !important;
+                              font-size: 13pt !important;
+                        }
+                  }
+                  .segment-button {
+                        color: lightgray !important;
+                  }
+                  .segment-activated {
+                        color: color($colors, primary) !important;
+                  }
+            }
+            button.starterBtn {
+                  margin: auto !important;
+                  text-align: center !important;
+                  width: 93vw !important;
+                  margin-top: 10pt !important;
+                  background: -webkit-linear-gradient(240deg, color($colors, tertiary), color($colors, primary));
+                  color: white !important;
+            }
+            ion-input.caption {
+                  background: white !important;
+                  width: 100vw !important;
+                  margin-bottom: 4pt !important;
+                  input {
+                        text-align: center !important
+                  }
+            }
+            ion-textarea.starter {
+                  background: white !important;
+                  border-top: solid 1px transparent !important;
+                  font-size: 12pt !important;
+                  padding: 0pt 5pt 1pt 5pt !important;
+                  textarea {
+                        text-align: center !important;
+                  }
+            }
+      }
+      ion-footer {
+            ion-toolbar {
+                  border-top: solid 3px color($colors, primary);
+                  border-bottom: 0 !important;
+                  margin-top: -33pt !important;
+                  height: 33pt !important;
+                  background: none !important;
+            }
+      }
+}

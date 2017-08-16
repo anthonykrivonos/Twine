@@ -1,0 +1,75 @@
+@import '../../theme/theme.scss';
+
+.alert {
+      button{
+            color: color($colors, secondary) !important;
+      }
+}
+
+twine-twine-card {
+      ion-item-sliding {
+            margin-top: 1pt !important;
+            ion-item {
+                  padding-top: 2pt !important;
+                  border-top-right-radius: 8pt !important;
+                  border-bottom-right-radius: 8pt !important;
+                  width: 108vw !important;
+                  img {
+                        border-radius: 50%;
+                        z-index: 2 !important;
+                        height: 50px !important;
+                        width: 50px !important;
+                        margin: 1pt 12pt 1pt -2pt !important;
+                        background-repeat: no-repeat !important;
+                        background-clip: content-box !important;
+                        background-position: top !important;
+                        background-size: cover !important;
+                  }
+                  h2 {
+                        font-family: 'Hind', sans-serif !important;
+                        background: -webkit-linear-gradient(310deg, color($colors, secondary), color($colors, secondary), color($colors, quaternary)) !important;
+                        -webkit-background-clip: text !important;
+                        -webkit-text-fill-color: transparent !important;
+                        margin-top: 0pt !important;
+                        margin-bottom: -1pt !important;
+                        font-size: 12pt !important;
+                        font-weight: 500 !important;
+                  }
+                  p {
+                        color: color($colors, gray) !important;
+                        font-weight: 400;
+                        white-space: normal;
+                        font-size: 12pt !important;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                  }
+                  ion-note {
+                        margin-right: 5vw !important;
+                        font-size: 10pt !important;
+                        &.arrow {
+                              margin-right: 2vw !important;
+                              ion-icon {
+                                    font-size: 16pt !important;
+                                    color: color($colors, lightgray) !important;
+                              }
+                        }
+                  }
+            }
+            ion-item-options {
+                  border: none !important;
+                  &.right {
+                        background: color($colors, lightgray) !important;
+                  }
+                  button {
+                        width: 25pt !important;
+                        background: -webkit-linear-gradient(310deg, color($colors, quaternary), color($colors, secondary)) !important;
+                        color: white !important;
+                        padding-top: 5px !important;
+                        &.arrow {
+                              background: none !important;
+                              color: lightgray !important;
+                        }
+                  }
+            }
+      }
+}

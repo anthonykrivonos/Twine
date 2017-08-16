@@ -1,0 +1,70 @@
+@import '../../theme/theme.scss';
+
+page-twines {
+      .spacing {
+            position: fixed !important;
+            background: white !important;
+            width: 100vw !important;
+            height: 3vh !important;
+            top: 0 !important;
+            z-index: 2 !important;
+      }
+      .toolbar {
+            top: 3vh;
+            z-index: 2 !important;
+            position: absolute !important;
+            height: 20pt !important;
+            border-bottom: solid 2pt color($colors, lightgray);
+            .toolbar-background {
+                  background: white !important;
+            }
+            .toolbar-title {
+                  font-family: 'Hind', sans-serif !important;
+                  font-size: 18pt !important;
+                  margin-top: 4pt !important;
+                  background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                  -webkit-background-clip: text !important;
+                  -webkit-text-fill-color: transparent !important;
+            }
+            ion-buttons {
+                  button {
+                        ion-icon {
+                              font-size: 22pt;
+                              background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                              -webkit-background-clip: text !important;
+                              -webkit-text-fill-color: transparent !important;
+                        }
+                        img {
+                              background-repeat: no-repeat !important;
+                              background-clip: content-box !important;
+                              background-position: top !important;
+                              background-size: cover !important;
+                              border-radius: 50%;
+                              z-index: 2 !important;
+                              width: 22pt !important;
+                              height: 22pt !important;
+                              margin: auto !important;
+                              margin-top: 2pt !important;
+                              &.logo {
+                                    width: 25pt !important;
+                                    height: 25pt !important;
+                                    margin-top: -1pt !important;
+                              }
+                        }
+                  }
+            }
+      }
+      ion-content {
+            background: color($colors, lightgray) !important;
+            height: 100vh !important;
+            ion-list {
+                  display: inline-block;
+<<<<<<< HEAD
+                  padding-top: 10vh !important;
+=======
+                  padding-top: 9vh !important;
+>>>>>>> 1cefd4fb3e488e62fadc2165570575f2ef576b53
+                  width: 100vw !important;
+            }
+      }
+}

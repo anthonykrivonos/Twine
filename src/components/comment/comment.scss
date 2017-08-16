@@ -1,0 +1,56 @@
+@import '../../theme/theme.scss';
+
+twine-comment {
+      ion-item-sliding {
+            margin-bottom: 1pt !important;
+            .item, .item-inner, .item-block, .item-ios {
+                  padding: 0 !important;
+                  margin-top: -1.5pt !important;
+                  margin-bottom: -1.5pt !important;
+            }
+            ion-item {
+                  img {
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        z-index: 2 !important;
+                        height: 35px !important;
+                        width: 35px !important;
+                        margin: 1pt 8pt 1pt 7pt !important;
+                        background-repeat: no-repeat !important;
+                        background-clip: content-box !important;
+                        background-position: top !important;
+                        background-size: cover !important;
+                  }
+                  h2 {
+                        font-family: 'Hind', sans-serif !important;
+                        background: -webkit-linear-gradient(310deg, color($colors, primary), color($colors, tertiary), color($colors, primary)) !important;
+                        -webkit-background-clip: text !important;
+                        -webkit-text-fill-color: transparent !important;
+                        margin-bottom: -3pt !important;
+                        font-size: 10pt !important;
+                        margin-top: 1pt !important;
+                        font-weight: 500 !important;
+                  }
+                  p {
+                        color: color($colors, gray) !important;
+                        font-weight: 400;
+                        white-space: normal;
+                        font-size: 11pt !important;
+                  }
+                  ion-note {
+                        margin-right: 20pt !important;
+                        font-size: 8pt !important;
+                  }
+            }
+            ion-item-options {
+                  border: none !important;
+                  button {
+                        width: 25pt !important;
+                        margin-left: 6pt !important;
+                        background: -webkit-linear-gradient(80deg, color($colors, primary), color($colors, tertiary)) !important;
+                        color: white !important;
+                        padding-top: 5px !important;
+                  }
+            }
+      }
+}

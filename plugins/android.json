@@ -1,0 +1,66 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "102157890331452",
+            "APP_NAME": "Twine",
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-native-keyboard": {
+            "LICENSE": "TRIAL",
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "phonegap-plugin-push": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.twine214176"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -1,0 +1,221 @@
+@import '../../theme/theme.scss';
+
+.alert {
+      button{
+            color: color($colors, secondary) !important;
+      }
+}
+
+twine-menu {
+      ion-row.cover
+      {
+            position: fixed !important;
+            z-index: 1 !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            margin-top: -10vh !important;
+            img {
+                  height: 80vh !important;
+                  object-fit: cover;
+            }
+      }
+      ion-content {
+            height: 100vh !important;
+            background: color($colors, lightgray) !important;
+            .infinitescroll {
+                  position: absolute !important;
+                  margin-bottom: 10pt !important;
+                  ion-infinite-scroll-content {
+                        background: white !important;
+                        -webkit-background-clip: text !important;
+                        -webkit-text-fill-color: transparent !important;
+                  }
+            }
+            ion-segment {
+                  background: white !important;
+                  margin-bottom: 0pt !important;
+                  padding: 0 !important;
+                  ion-segment-button {
+                        background: white !important;
+                        font-size: 12pt !important;
+                        text-transform: none !important;
+                  }
+                  .segment-button {
+                        color: lightgray !important;
+                  }
+                  .segment-activated {
+                        color: color($colors, secondary) !important;
+                  }
+            }
+            ion-row {
+                  z-index: 2 !important;
+                  &.user {
+                        width: 100% !important;
+                        margin-top: 6vh !important;
+                        img {
+                              z-index: 2 !important;
+                              margin: auto !important;
+                              margin: auto !important;
+                              background-repeat: no-repeat !important;
+                              background-clip: content-box !important;
+                              background-position: top !important;
+                              background-size: cover !important;
+                              border-radius: 50%;
+                              z-index: 4 !important;
+                              height: 32vw !important;
+                              width: 32vw !important;
+                              border: solid 1vw white !important;
+                              display: block;
+                              margin: 1vh auto -7vh auto !important;
+                        }
+                  }
+                  &.middle {
+                        height: 15vw !important;
+                        background: white !important;
+                        ion-col {
+                              font-size: 5vw !important;
+                              color: color($colors, gray) !important;
+                              &.left {
+                                    padding-left: 2vw !important;
+                                    float: left !important;
+                                    width: 30vw !important;
+                                    font-family: 'Hind', sans-serif !important;
+                                    .name {
+                                          display: table-cell;
+                                          vertical-align: middle;
+                                          height: 12vw !important;
+                                    }
+                                    .lastlogin {
+                                          font-size: 3vw !important;
+                                    }
+                              }
+                              &.right {
+                                    padding-right: 2vw !important;
+                                    float: right !important;
+                                    text-align: right !important;
+                                    div {
+                                          background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                                          -webkit-background-clip: text !important;
+                                          -webkit-text-fill-color: transparent !important;
+                                    }
+                                    .score {
+                                          font-size: 8vw !important;
+                                          margin: -2vw 0 -3vw 0 !important;
+                                          font-family: 'Hind', sans-serif !important;
+                                    }
+                                    .scores {
+                                          font-size: 3vw !important;
+                                          text-align: right !important;
+                                          ion-icon {
+                                                flex-direction: column;
+                                                justify-content: center;
+                                                text-align: center !important;
+                                                width: 4.5vw !important;
+                                                background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                                                -webkit-background-clip: text !important;
+                                                -webkit-text-fill-color: transparent !important;
+                                                &.img {
+                                                      font-size: 14pt !important;
+                                                }
+                                                img {
+                                                      position: static !important;
+                                                      height: 10pt !important;
+                                                      width: 10pt !important;
+                                                }
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+            .underlay {
+                  text-align: center;
+                  height: 20vh !important;
+                  background: none !important;
+                  div.pic {
+                        background-repeat: no-repeat !important;
+                        background-size: cover !important;
+                        background-position: top !important;
+                        height: 100% !important;
+                        filter: blur(5px);
+                  }
+            }
+            ion-content {
+                  background: color($colors, lightgray) !important;
+                  height: 67vh !important;
+                  &.notif {
+                        .scroll-content {
+                              padding-top: 7pt !important;
+                        }
+                  }
+                  .notifcontainer {
+                        background: none !important;
+                  }
+                  ion-item, button {
+                        margin-top: 1pt !important;
+                  }
+                  ion-infinite-scroll {
+                        margin-top: 20pt !important;
+                  }
+                  div {
+                        ion-item-group {
+                              ion-item {
+                                    div.question, div.answer {
+                                          height: auto !important;
+                                          white-space: normal;
+                                    }
+                                    div.question {
+                                          margin-bottom: 2pt !important;
+                                    }
+                                    div.answer {
+                                          word-wrap: normal !important;
+                                    }
+                                    div.update {
+                                          @extend div.answer;
+                                          font-size: 8pt !important;
+                                          margin-bottom: 2pt !important;
+                                    }
+                                    div.muchtext {
+                                          @extend div.answer;
+                                          word-wrap: normal !important;
+                                          font-size: 7pt !important;
+                                    }
+                              }
+                              textarea {
+                                    color: color($colors, gray) !important;
+                              }
+                              button.send {
+                                    background: white !important;
+                                    color: color($colors, secondary);
+                                    height: 26pt !important;
+                                    width: 100% !important;
+                                    font-size: 12pt !important;
+                                    margin-top: -1pt !important;
+                              }
+                        }
+                  }
+                  ion-slide {
+                        position: static !important;
+                  }
+                  ion-item-group {
+                        &.name {
+                              margin-top: 6pt !important;
+                        }
+                  }
+                  ion-label, ion-input {
+                        color: color($colors, gray) !important;
+                  }
+                  ion-label.stacked, div.question {
+                        font-size: 10pt !important;
+                        color: color($colors, secondary) !important;
+                  }
+                  ion-item-divider {
+                        text-align: left !important;
+                        background: none !important;
+                        ion-label {
+                              @extend ion-label.stacked;
+                        }
+                  }
+            }
+      }
+}

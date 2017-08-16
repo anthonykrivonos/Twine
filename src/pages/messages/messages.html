@@ -1,0 +1,33 @@
+<div class="spacing"></div>
+<twine-message-card [id]="id" [other]="(twinee | async)?.id">
+</twine-message-card>
+<ion-toolbar no-border-top>
+      <ion-title>{{(twinee | async)?.name}}</ion-title>
+      <ion-buttons start>
+            <button ion-button (tap)="toTwines()">
+                  <ion-icon name="chatbubbles" (tap)="popPage();"></ion-icon>
+            </button>
+      </ion-buttons>
+      <ion-buttons end>
+            <button (tap)="toFacebookURL()" ion-button>
+                  <img [style.background]="'url(' + (twinee | async)?.picture + ')'"/>
+            </button>
+      </ion-buttons>
+</ion-toolbar>
+<ion-content has-header="true">
+      <div class="spacer"></div>
+      <twine-placeholder [color]="'gray'" *ngIf="messages.length == 0" [text]="'You were just twined with ' + (twinee | async)?.name + '. Start the conversation!'"></twine-placeholder>
+      <ion-infinite-scroll *ngIf="!end" (ionInfinite)="infiniteScroll($event)" position="top" threshold="5%">
+            <ion-infinite-scroll-content
+                  loadingSpinner="crescent"
+                  loadingText="Loading your messages with {{(twinee | async)?.name}}...">
+            </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      <ion-list>
+            <twine-message *ngFor="let message of messages; let i = index"
+                  [id]="i" [twiner] = "twiner" [message]="message">
+            </twine-message>
+      </ion-list>
+      <br/><br/><br/>
+</ion-content>
+<div class="spacing"></div>

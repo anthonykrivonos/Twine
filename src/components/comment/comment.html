@@ -1,0 +1,13 @@
+<ion-item-sliding no-lines>
+      <ion-item no-lines>
+            <img [style.background]="'url(' + (twiner | async)?.picture + ')'" item-left/>
+            <h2>{{(twiner | async)?.name}}</h2>
+            <p>{{text}}</p>
+            <ion-note item-right>{{time | async}}</ion-note>
+      </ion-item>
+      <ion-item-options *ngIf="(twiner | async)?.id == (userObs | async)?.id" side="right" no-lines>
+            <button ion-button (tap)="delete()">
+                  <ion-icon name="md-trash"></ion-icon>
+            </button>
+      </ion-item-options>
+</ion-item-sliding>

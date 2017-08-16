@@ -24,26 +24,20 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  primary:    #ff1e56,
+  secondary: #00b4ff,
+  quaternary: #51d1ec,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  blushpapaya:#f84d67,
-  papaya:     #E24E42,
-  mustard:    #E9B000,
-  blush:      #EB6E80,
-  aqua:       #008F95,
+  tertiary:    #ff8c42,
   lightgray:  #F3F3F3,
-  gray:       #515151,
-  offwhite:   #fffef9
+  gray:       #515151
 );
-
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
 
 
 

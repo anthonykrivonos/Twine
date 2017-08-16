@@ -1,0 +1,13 @@
+<ion-item (tap)="checkBlock()" [style.background]="(background | async)" no-lines>
+      <img [style.background]="'url(' + (picture | async) + ')'" item-left/>
+      <h3 [style.color]="(color | async)">{{name | async}}</h3>
+      <div item-right>
+            <div [style.color]="(color | async)" *ngIf="(blocked | async)">
+                  <ion-icon name="md-radio-button-off"></ion-icon>
+            </div>
+            <div [style.color]="(color | async)" *ngIf="!(blocked | async)">
+                  <div class="blocked"><div>Blocked</div></div>
+                  <ion-icon name="md-radio-button-on"></ion-icon>
+            </div>
+      </div>
+</ion-item>

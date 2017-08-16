@@ -1,0 +1,67 @@
+{
+  "_from": "cordova-plugin-native-keyboard@^1.4.1",
+  "_id": "cordova-plugin-native-keyboard@1.4.3",
+  "_inBundle": false,
+  "_integrity": "sha1-FZjER1UBH9YThR9tKAdpuTEcXEs=",
+  "_location": "/cordova-plugin-native-keyboard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-native-keyboard@^1.4.1",
+    "name": "cordova-plugin-native-keyboard",
+    "escapedName": "cordova-plugin-native-keyboard",
+    "rawSpec": "^1.4.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.4.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-native-keyboard/-/cordova-plugin-native-keyboard-1.4.3.tgz",
+  "_shasum": "1598c44755011fd613851f6d280769b9311c5c4b",
+  "_spec": "cordova-plugin-native-keyboard@^1.4.1",
+  "_where": "/Users/Anthony/dev/twine-app/node_modules",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/EddyVerbruggen"
+  },
+  "bugs": {
+    "url": "https://github.com/EddyVerbruggen/cordova-plugin-native-keyboard/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-native-keyboard",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "This plugin aims to solve common keyboard problems encountered with Cordova / PhoneGap apps. The messenger component (see screenshots) is ready for production, but this plugin will have more tricks up its sleeve. I'll document those once they're ready for primetime as well.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/EddyVerbruggen/cordova-plugin-native-keyboard#readme",
+  "keywords": [
+    "Keyboard",
+    "Native Keyboard",
+    "Messenger",
+    "Messenger Keyboard",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-native-keyboard",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddyVerbruggen/cordova-plugin-native-keyboard.git"
+  },
+  "version": "1.4.3"
+}

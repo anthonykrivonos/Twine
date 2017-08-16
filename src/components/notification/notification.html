@@ -1,0 +1,7 @@
+<div class="container">
+      <ion-item [style.background]="(background | async)" no-lines>
+            <img [style.background]="'url(' + (twiner | async)?.picture + ')'" item-left/>
+            <h3>{{this.body}}</h3>
+            <ion-note item-right>{{time | async}}</ion-note>
+      </ion-item>
+</div>

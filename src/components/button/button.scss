@@ -1,0 +1,18 @@
+@import '../../theme/theme.scss';
+
+twine-button {
+      img {
+            position: absolute !important;
+            width: 18vw !important;
+            height: 18vw !important;
+            right: 0;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 6px;
+            border-radius: 50%;
+            background: linear-gradient(160deg, color($colors, tertiary), color($colors, primary)) !important;
+            border: none !important;
+            z-index: 7 !important;
+      }
+}

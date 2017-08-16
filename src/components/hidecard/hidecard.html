@@ -1,0 +1,9 @@
+<ion-item (tap)="checkHide()" no-lines>
+      <img src="{{picture | async}}" item-left/>
+      <h3>{{name | async}}</h3>
+      <div item-right>
+            <div>
+                  <ion-icon name="md-eye-off"></ion-icon>
+            </div>
+      </div>
+</ion-item>

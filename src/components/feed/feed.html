@@ -1,0 +1,18 @@
+<ion-content class="content-full" fullscreen scroll="true" overflow-scroll="true">
+      <div class="padding"></div>
+      <div *ngIf="feed.length == 0">
+            <br/>
+            <twine-placeholder [color]="'primary'" [text]="'No Twines Found'"></twine-placeholder>
+      </div>
+      <ion-list>
+            <twine-feed-card *ngFor="let id of feed"
+                  [id]="id"
+            ></twine-feed-card>
+      </ion-list>
+      <ion-infinite-scroll *ngIf="!end" (ionInfinite)="infiniteScroll($event)" position="bottom" threshold="30%">
+            <ion-infinite-scroll-content
+                  loadingSpinner="crescent"
+                  loadingText="Loading your feed...">
+            </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+</ion-content>

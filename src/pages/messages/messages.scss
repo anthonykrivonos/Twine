@@ -1,0 +1,65 @@
+@import '../../theme/theme.scss';
+
+page-messages {
+      .spacing {
+            position: fixed !important;
+            background: white !important;
+            width: 100vw !important;
+            height: 3vh !important;
+            top: 0 !important;
+            z-index: 2 !important;
+      }
+      .toolbar {
+            top: 3vh;
+            z-index: 2 !important;
+            position: fixed !important;
+            height: 20pt !important;
+            border-bottom: solid 2pt color($colors, lightgray);
+            .toolbar-background {
+                  background: white !important;
+            }
+            .toolbar-title {
+                  font-size: 18pt !important;
+                  margin-top: 4pt !important;
+                  font-weight: 600 !important;
+                  background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                  -webkit-background-clip: text !important;
+                  -webkit-text-fill-color: transparent !important;
+            }
+            ion-buttons {
+                  button {
+                        ion-icon {
+                              font-size: 22pt;
+                              background: -webkit-linear-gradient(280deg, color($colors, quaternary), color($colors, secondary), color($colors, secondary)) !important;
+                              -webkit-background-clip: text !important;
+                              -webkit-text-fill-color: transparent !important;
+                        }
+                        img {
+                              background-repeat: no-repeat !important;
+                              background-clip: content-box !important;
+                              background-position: top !important;
+                              background-size: cover !important;
+                              border-radius: 50%;
+                              z-index: 2 !important;
+                              width: 22pt !important;
+                              height: 22pt !important;
+                              margin: auto !important;
+                              margin-top: 2pt !important;
+                        }
+                  }
+            }
+      }
+      ion-content {
+            margin-top: 4vh !important;
+            position: absolute !important;
+            background: color($colors, lightgray) !important;
+            padding-top: 10vh !important;
+            .spacer {
+                  height: 9vh !important;
+            }
+            ion-infinite-scroll {
+                  margin-bottom: -10pt !important;
+                  z-index: 2 !important;
+            }
+      }
+}

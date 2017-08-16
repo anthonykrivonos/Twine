@@ -1,6 +1,8 @@
 {
   "name": "twine",
   "app_id": "e2b56118",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

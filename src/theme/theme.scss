@@ -1,0 +1,57 @@
+// Font Faces
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Hind|Roboto|Open+Sans');
+
+@font-face {
+    font-family: 'lobster';
+    src: url("../assets/fonts/lobster/fonts/lobster.ttf") format("ttf"),
+      url("../assets/fonts/lobster/fonts/lobster.woff") format("woff"),
+      url("../assets/fonts/lobster/fonts/lobster.woff2") format("woff2"),
+      url("../assets/fonts/lobster/fonts/lobster.svg") format("svg"),
+      url("../assets/fonts/lobster/fonts/lobster.eot") format("eot");
+}
+
+@font-face {
+    font-family: 'trebuchet';
+    src: url("../assets/fonts/trebuchet/fonts/trebuchet.ttf") format("ttf"),
+      url("../assets/fonts/trebuchet/fonts/trebuchet.woff") format("woff"),
+      url("../assets/fonts/trebuchet/fonts/trebuchet.woff2") format("woff2"),
+      url("../assets/fonts/trebuchet/fonts/trebuchet.svg") format("svg"),
+      url("../assets/fonts/lobstrebuchetter/fonts/trebuchet.eot") format("eot");
+}
+
+// Mixins
+
+@mixin unselectable() {
+      cursor: default;
+      user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+}
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 640px) { @content; }
+  }
+  @else if $class == sm {
+    @media (min-width: 750px) { @content; }
+  }
+  @else if $class == md {
+    @media (min-width: 1080px) { @content; }
+  }
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

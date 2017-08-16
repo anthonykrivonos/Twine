@@ -1,0 +1,28 @@
+<div *ngIf="(comments | async)?.length >= 3" class="gradient"></div>
+<div *ngIf="(comments | async)?.length >= 3">
+      <ion-content>
+            <ion-list>
+                  <twine-comment *ngFor="let comment of comments | async; let i = index"
+                        [id]="comment?.id"
+                        [idx]="i"
+                        [text]="comment?.text"
+                        [date]="comment?.date"
+                        [twine]="id">
+                  </twine-comment>
+            </ion-list>
+      </ion-content>
+</div>
+<ion-list *ngIf="(comments | async)?.length < 3">
+      <twine-comment *ngFor="let comment of comments | async; let i = index"
+            [id]="comment?.id"
+            [idx]="i"
+            [text]="comment?.text"
+            [date]="comment?.date"
+            [twine]="id">
+      </twine-comment>
+</ion-list>
+<ion-item class="bottom" no-lines>
+      <ion-input [value]="text" [(ngModel)]="text" scroll="false" [(ngModel)]="msg" maxlength="100" (keydown)="bottomScroll(0)" (keydown.enter)="comment()" placeholder="Write a comment..."></ion-input>
+      <button [disabled]="text.length == 0 || !this.online" color="primary" (tap)="comment()" ion-button item-right block outline><div>Post</div></button>
+</ion-item>
+<div class="border"></div>
